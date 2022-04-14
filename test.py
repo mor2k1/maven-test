@@ -1,6 +1,7 @@
-imoprt os
+import os
 
-os.getcwd()
+home_directory = os.getcwd()
+print(home_directory)
 os.system("whoami")
 
 def calc(num1, num2):
