@@ -1,12 +1,12 @@
 pipeline {
-    agent any 
-    stages {
-    stage('maven install') {
+  agent any
+  stages {
+    stage('BlueOcean Python File Test') {
       steps {
-         withMaven(maven: 'Maven'){
-            sh 'mvn clean install'
-        }
+        git(url: 'https://github.com/mor2k1/maven-test.git', branch: 'main')
+        emailext(subject: 'Done', body: 'test', attachLog: true, from: 'Jenkins', to: 'yuvi.mor@gmail.com')
       }
     }
+
   }
 }
